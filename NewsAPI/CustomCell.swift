@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import Cards
 
 class CustomCell: UICollectionViewCell, CardDelegate {
     
@@ -57,7 +56,7 @@ class CustomCell: UICollectionViewCell, CardDelegate {
             //iPhone_XSMax
             card.heightAnchor.constraint(equalToConstant: screenHeight/2.5).isActive = true
         default:
-            card.heightAnchor.constraint(equalToConstant: screenHeight/3).isActive = true
+            card.heightAnchor.constraint(equalToConstant: screenHeight/4).isActive = true
             card.topAnchor.constraint(equalTo: self.topAnchor, constant: self.frame.height/5 - 30).isActive = true
         }
         
@@ -67,10 +66,10 @@ class CustomCell: UICollectionViewCell, CardDelegate {
         
         
         card.backgroundColor = .systemBackground
-        card.subtitle = "subtitle"
+        card.subtitle = ""
         card.title = "titre"
         card.category = "author"
-        card.textColor = UIColor.white
+        card.textColor = UIColor.black
         card.hasParallax = false
         
         return card
@@ -78,7 +77,7 @@ class CustomCell: UICollectionViewCell, CardDelegate {
     
     override func prepareForReuse() {
         self.card.title = "titre"
-        self.card.subtitle = "subtitle"
+        self.card.subtitle = ""
         self.card.category = "author"
         self.card.textColor = UIColor.white
     }

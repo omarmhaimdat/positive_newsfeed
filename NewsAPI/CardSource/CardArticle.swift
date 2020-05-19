@@ -43,11 +43,18 @@ import UIKit
             categoryLbl.text = category.uppercased()
         }
     }
+    
+    @IBInspectable public var blurEffect: UIBlurEffect.Style = .extraLight {
+        didSet{
+            blurV.effect = UIBlurEffect(style: blurEffect)
+        }
+    }
 
     //Priv Vars
     var titleLbl = UILabel ()
     var subtitleLbl = UILabel()
     var categoryLbl = UILabel()
+    var blurV = UIVisualEffectView()
     
     // View Life Cycle
     override public init(frame: CGRect) {
@@ -62,7 +69,9 @@ import UIKit
     override open func initialize() {
         super.initialize()
         
+        backgroundIV.addSubview(blurV)
         backgroundIV.addSubview(titleLbl)
+        
         backgroundIV.addSubview(subtitleLbl)
         backgroundIV.addSubview(categoryLbl)
     }
@@ -102,6 +111,9 @@ import UIKit
         subtitleLbl.lineBreakMode = .byTruncatingTail
         subtitleLbl.numberOfLines = 0
         subtitleLbl.textAlignment = .left
+        
+        let blur = UIBlurEffect(style: blurEffect)
+        blurV.effect = blur
      
         self.layout()
         
@@ -111,6 +123,12 @@ import UIKit
         super.layout(animating: animating)
         
         let gimme  = LayoutHelper(rect: backgroundIV.bounds)
+        
+        blurV.frame = CGRect(x: 0,
+                             y: 0,
+                             width: backgroundIV.bounds.width,
+                             height: gimme.Y(42))
+        
         
         categoryLbl.frame = CGRect(x: insets,
                                    y: insets,

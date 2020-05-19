@@ -41,9 +41,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         
         card.card.title = positiveArticles?.articles[indexPath.item].title ?? "Title"
         card.card.category = positiveArticles?.articles[indexPath.item].author ?? "Author"
-        card.card.subtitle = positiveArticles?.articles[indexPath.item].publishedAt ?? "Date"
+//        card.card.subtitle = positiveArticles?.articles[indexPath.item].publishedAt ?? "Date"
         card.card.backgroundColor = .black
-        card.card.textColor = .white
+        card.card.textColor = .black
        
         
         let queue = DispatchQueue.global(qos: .background)
@@ -51,8 +51,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
             let data = NSData(contentsOf: NSURL(string: self.positiveArticles?.articles[indexPath.item].urlToImage ?? "https://www.setra.com/hubfs/Sajni/crc_error.jpg")! as URL)
             let img = UIImage(data: data! as Data)!
             DispatchQueue.main.async {
-                let image = img.addFilter(filter: .Instant)
-                card.card.backgroundImage = self.blurImage(image: image)
+                card.card.backgroundImage = img.addFilter(filter: .Instant)
                 
             }
         }
@@ -130,7 +129,7 @@ extension ViewController {
 
         let filter = CIFilter(name: "CIGaussianBlur")
         filter?.setValue(inputImage, forKey: kCIInputImageKey)
-        filter?.setValue(5.0, forKey: kCIInputRadiusKey)
+        filter?.setValue(10.0, forKey: kCIInputRadiusKey)
         let outputImage = filter?.outputImage
 
         var cgImage:CGImage?
