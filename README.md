@@ -20,7 +20,7 @@ The project consists of an iOS application that will consume an API and select t
 * Build and run the project
 
 ## Acknowledgement
-This projet uses package called [Cards](https://github.com/PaoloCuscela/Cards) made by **Paolo Cuscela** 
+This projet uses a package called [Cards](https://github.com/PaoloCuscela/Cards) made by **Paolo Cuscela** 
 
 Thanks to him 🙏
 
