@@ -27,7 +27,7 @@ struct Articles: Decodable {
 
 class ViewController: UIViewController {
     
-    let serverAddress = "https://newsapi.org/v2/top-headlines?country=us&apiKey=485c58875fdc4cec9588a09c76634c87"
+    let serverAddress = "https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=485c58875fdc4cec9588a09c76634c87"
     
     var articles: Articles?
     var positiveArticles: Articles?
