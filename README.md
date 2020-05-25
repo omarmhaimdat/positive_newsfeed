@@ -5,10 +5,10 @@
 The project consists of an iOS application that will consume an API and select the most positive articles. The application uses the built-in `Natural Language` API to perform the sentiment analysis inference on the articles's text.
 
 ## Final result
-![Final resutl](final-result.png)
+![Final resutl](assets/final-result.png)
 
 ## Article structure
-![Article structure](article-structure.png)
+![Article structure](assets/article-structure.png)
 
 ## Requirement
 * Xcode 11
