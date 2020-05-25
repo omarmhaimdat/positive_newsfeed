@@ -10,6 +10,21 @@ The project consists of an iOS application that will consume an API and select t
 ## Article structure
 ![Article structure](article-structure.png)
 
+## Requirement
+* Xcode 11
+* Register an API Key at [https://newsapi.org](https://newsapi.org)
+
+## Getting Started
+* Copy and clone the project
+* Paste the API Key inside `ViewController.swift`
+* Build and run the project
+
+## Acknowledgement
+This projet uses package called [Cards](https://github.com/PaoloCuscela/Cards) made by **Paolo Cuscela** 
+
+Thanks to him 🙏
+
+
 ## About me
 
 Omar MHAIMDAT – [Linkedin](https://www.linkedin.com/in/omarmhaimdat/) – omarmhaimdat@gmail.com

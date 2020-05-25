@@ -27,7 +27,9 @@ struct Articles: Decodable {
 
 class ViewController: UIViewController {
     
-    let serverAddress = "https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=485c58875fdc4cec9588a09c76634c87"
+    
+    // MARK:- ADD THE API KEY HERE
+    let API_KEY = "ADD THE API KEY"
     
     var articles: Articles?
     var positiveArticles: Articles?
@@ -100,7 +102,7 @@ class ViewController: UIViewController {
     
     func getNews() {
         
-        var request = URLRequest(url: URL(string: self.serverAddress)!)
+        var request = URLRequest(url: URL(string: self.API_KEY)!)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
